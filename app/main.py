@@ -12,8 +12,8 @@ app = FastAPI(
         "name": "Andrey Butakov",
         "email": "6669.butakov@gmail.com",
     },
-    openapi_url="/openapi.json",
-    docs_url="/docs",
+    openapi_url=None,
+    docs_url=None,
     redoc_url=None,
 )
 
