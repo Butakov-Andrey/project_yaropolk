@@ -1,7 +1,7 @@
 from dependencies import logging
-from fastapi import Depends, FastAPI, Request
+from fastapi import Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from loguru import logger
+from routers import home_router
 
 app = FastAPI(
     title="Project Yaropolk",
@@ -25,9 +25,4 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-# home
-@app.get("/", status_code=200, dependencies=[Depends(logging)])
-async def home(request: Request) -> dict[str, str]:
-    logger.info(f"Request: {request.method} {request.url} {request.headers}")
-    return {"msg": "Welcome to Project Yaropolk"}
+app.include_router(home_router, dependencies=[Depends(logging)])
