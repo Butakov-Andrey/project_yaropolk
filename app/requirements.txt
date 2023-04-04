@@ -30,8 +30,12 @@ idna==3.4
     # via anyio
 iniconfig==2.0.0
     # via pytest
+jinja2==3.1.2
+    # via -r ./app/requirements.in
 loguru==0.6.0
     # via -r ./app/requirements.in
+markupsafe==2.1.2
+    # via jinja2
 mccabe==0.7.0
     # via flake8
 mypy==1.1.1

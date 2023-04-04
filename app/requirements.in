@@ -6,8 +6,12 @@ pre-commit
 # fastapi
 fastapi
 uvicorn
+
 # logging
 loguru
+
+# templates
+Jinja2
 
 # tests
 pytest
