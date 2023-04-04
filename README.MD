@@ -1,4 +1,4 @@
-# Yaropolk
+# Project Yaropolk
 pass
 
 ## Requirements
@@ -6,6 +6,7 @@ To install the required dependencies, run the following commands:
 ```
 $ pip install pip-tools
 $ pip-compile ./app/requirements.in
+$ pip-sync ./app/requirements.txt
 ```
 ## Pre-commit
 Install pre-commit to ensure code quality and consistency:
