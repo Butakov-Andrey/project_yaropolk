@@ -1,0 +1,14 @@
+# local
+flake8
+mypy
+pre-commit
+
+# fastapi
+fastapi
+uvicorn
+# logging
+loguru
+
+# tests
+pytest
+coverage
