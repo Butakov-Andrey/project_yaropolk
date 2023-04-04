@@ -1,0 +1,13 @@
+**/.env
+**/.ssh
+*.log
+.coverage
+test.db
+db.json
+
+logs/
+env/
+.vscode/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
