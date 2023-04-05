@@ -12,6 +12,7 @@ loguru
 
 # templates
 Jinja2
+python-multipart
 
 # tests
 pytest

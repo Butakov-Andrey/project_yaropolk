@@ -3,7 +3,7 @@ from fastapi import Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from routers import home_router
+from routers import home_router, recorder_router
 
 app = FastAPI(
     title="Project Yaropolk",
@@ -33,3 +33,4 @@ app.add_middleware(
 )
 
 app.include_router(home_router, dependencies=[Depends(logging)])
+app.include_router(recorder_router, dependencies=[Depends(logging)])
