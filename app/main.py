@@ -1,8 +1,12 @@
-from dependencies import logging
-from fastapi import Depends, FastAPI
+import sys
+
+from config import settings
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from loguru import logger
+from middleware import logging_middleware
 from routers import home_router, recorder_router
 
 app = FastAPI(
@@ -17,11 +21,20 @@ app = FastAPI(
     redoc_url=None,
 )
 
+# logger
+logger.remove()
+logger.add(
+    sys.stdout,
+    colorize=True,
+    format=settings.LOGURU_FORMAT,
+)
+
+
 # templates
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates/")
 
-# cors
+# middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -29,7 +42,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+app.middleware("http")(logging_middleware)
 
 # routers
-app.include_router(home_router, dependencies=[Depends(logging)])
-app.include_router(recorder_router, dependencies=[Depends(logging)])
+app.include_router(home_router)
+app.include_router(recorder_router)

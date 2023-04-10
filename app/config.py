@@ -5,6 +5,9 @@ from pydantic import BaseSettings
 
 class Settings(BaseSettings):
     SOME_TOKEN: str = "Some secret token"
+    LOGURU_FORMAT: str = (
+        "<green>{time:HH:mm:ss}</green> | {level} | <level>{message}</level>"
+    )
 
     class Config:
         env_file = os.getenv("ENV_FILE")

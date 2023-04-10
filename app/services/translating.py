@@ -10,5 +10,5 @@ async def translate_text(text: str, from_lang: str, to_lang: str) -> str:
             target=to_lang,
         ).translate(text)
     except NotValidPayload as exc:
-        raise HTTPException(status_code=400, detail=exc)
+        raise HTTPException(status_code=400, detail=str(exc))
     return translated_by_google
