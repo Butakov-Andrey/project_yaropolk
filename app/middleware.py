@@ -1,13 +1,12 @@
 from typing import Callable
 
 from fastapi import Request
-from fastapi.responses import JSONResponse, StreamingResponse
+from fastapi.responses import JSONResponse
 from loguru import logger
 
 
 async def logging_middleware(request: Request, call_next: Callable) -> JSONResponse:
-    # logging request
-    logger.debug(f"REQUEST:")
+    logger.debug("REQUEST:")
     logger.debug(f"{request.method} {request.url}")
     logger.debug("Params:")
     for name, value in request.path_params.items():
@@ -18,8 +17,7 @@ async def logging_middleware(request: Request, call_next: Callable) -> JSONRespo
 
     response = await call_next(request)
 
-    # logging response
-    logger.info(f"RESPONSE:")
+    logger.info("RESPONSE:")
     logger.info(f"{request.method} {request.url}")
     logger.info(f"Status code: {response.status_code}")
     logger.info("Headers:")
