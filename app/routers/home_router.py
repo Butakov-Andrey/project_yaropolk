@@ -1,18 +1,16 @@
 import main
-from dependencies import logging
-from fastapi import APIRouter, Depends, Request
+from fastapi import APIRouter, Request
 from fastapi.responses import HTMLResponse
-from loguru import logger
 
-home_router = APIRouter()
-
-
-@home_router.get(
-    "/",
-    status_code=200,
-    response_class=HTMLResponse,
-    dependencies=[Depends(logging)],
+home_router = APIRouter(
+    tags=["home page"],
+    responses={404: {"description": "Not found"}},
 )
-async def home(request: Request) -> dict[str, str]:
-    logger.info(f"Request: {request.method} {request.url} {request.headers}")
+
+
+@home_router.get("/", status_code=200)
+async def home(request: Request) -> HTMLResponse:
+    """
+    Returns the main page of app
+    """
     return main.templates.TemplateResponse("home.html", {"request": request})

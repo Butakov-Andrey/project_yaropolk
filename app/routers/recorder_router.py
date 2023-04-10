@@ -1,18 +1,18 @@
-from dependencies import logging
-from fastapi import APIRouter, Depends, File
-from fastapi.responses import JSONResponse
+from fastapi import APIRouter
+from schemas import TranslatedText, UserText
+from services import translate_text
 
-recorder_router = APIRouter()
-
-
-@recorder_router.post(
-    "/audio/",
-    status_code=201,
-    response_class=JSONResponse,
-    dependencies=[Depends(logging)],
+recorder_router = APIRouter(
+    prefix="/api/v1",
+    tags=["recorder"],
+    responses={404: {"description": "Not found"}},
 )
-async def save_audio_file(audio: bytes = File(...)) -> dict[str, str]:
-    with open("recording.mp4", "wb") as f:
-        f.write(audio)
 
-    return {"message": "Audio file saved successfully."}
+
+@recorder_router.post("/translate-text/", status_code=200)
+async def translated_text_handler(user_text: UserText) -> TranslatedText:
+    """
+    Translates incoming text message from Russian to English
+    """
+    translated_text = await translate_text(user_text.message, "ru", "en")
+    return TranslatedText(message=translated_text)

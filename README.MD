@@ -1,5 +1,10 @@
 # Project Yaropolk
-pass
+Voice Assistant
+
+## Features
+- voice text input
+- keyboard text input
+- text translation
 
 ## Requirements
 To install the required dependencies, run the following commands:
@@ -39,3 +44,14 @@ To check test coverage, run:
 $ docker-compose exec app coverage run -m pytest
 $ docker-compose exec app coverage report -m
 ```
+
+STT
+https://github.com/openai/whisper
+https://github.com/alphacep/vosk-api/
+https://github.com/sovaai/sova-asr
+
+## TODO
+- команда для удаления записанного текста
+- добавление файлов или ссылок для поиска по ним
+- второй бот чисто для общения с воспроизведением звука
+- добавление изображений

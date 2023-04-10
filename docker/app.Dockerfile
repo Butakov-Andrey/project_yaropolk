@@ -5,6 +5,9 @@ ENV PYTHONUNBUFFERED 1
 
 WORKDIR /code
 
+# перевод аудио файлов в нужный формат для модели распознавания голоса
+# RUN apt-get update && apt-get install -y ffmpeg libavcodec-extra
+
 COPY app/requirements.txt /code/requirements.txt
 
 RUN pip install --upgrade pip \

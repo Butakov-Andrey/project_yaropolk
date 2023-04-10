@@ -6,20 +6,33 @@
         <!-- css -->
         <link href="{{ url_for('static', path='/css/pico-master/css/pico.min.css') }}" rel="stylesheet">
         <link href="{{ url_for('static', path='/css/base.css') }}" rel="stylesheet">
+        <!-- favicon.ico -->
+        <link rel="icon" href="{{ url_for('static', path='/favicon.ico') }}">
     </head>
     <body>
+
         <div class="container">
-            <h1>Hello, world!</h1>
+            <button id="hide-btn">Hide Div</button>
+            <div id="main">
+                <h1>Hello, world!</h1>
 
-            <button class="contrast outline" id="start-recording-btn">Start Recording</button>
-            <button class="contrast outline" id="stop-recording-btn">Stop Recording</button>
-            <button class="contrast outline" id="send-audio-btn">Send Audio</button>
+                <p><h4>userRequestDiv:</h4>
+                    <div>
+                        <p><textarea id="userRequest"></textarea></p>
+                    </div>
+                </p>
+                <button id="send-btn">Send text</button>
 
-            <div id="response"></div>
-
+                <p><h4>serverResponseDiv:</h4>
+                    <div id="serverResponse"></div>
+                </p>
+            </div>
         </div>
 
         <!-- js -->
-        <script src="{{ url_for('static', path='/js/recorder.js') }}"></script>
+        <script type="module" src="{{ url_for('static', path='/js/home.js') }}"></script>
+        <script type="module" src="{{ url_for('static', path='/js/bot.js') }}"></script>
+        <script type="module" src="{{ url_for('static', path='/js/_audio.js') }}"></script>
+        <script type="module" src="{{ url_for('static', path='/js/_send_to_server.js') }}"></script>
     </body>
 </html>

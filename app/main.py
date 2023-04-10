@@ -12,16 +12,14 @@ app = FastAPI(
         "name": "Andrey Butakov",
         "email": "6669.butakov@gmail.com",
     },
-    openapi_url=None,
-    docs_url=None,
+    openapi_url="/openapi.json",
+    docs_url="/docs",
     redoc_url=None,
 )
-
 
 # templates
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates/")
-
 
 # cors
 app.add_middleware(
@@ -32,5 +30,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# routers
 app.include_router(home_router, dependencies=[Depends(logging)])
 app.include_router(recorder_router, dependencies=[Depends(logging)])
