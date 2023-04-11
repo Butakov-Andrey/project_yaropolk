@@ -6,7 +6,7 @@ from fastapi import HTTPException
 
 async def translate_text(text: str, from_lang: str, to_lang: str) -> str:
     try:
-        if settings.DEEPL_API_KEY == "test":
+        if settings.DEEPL_API_KEY == "Deepl APIKey":
             translated_text = GoogleTranslator(
                 source=from_lang,
                 target=to_lang,

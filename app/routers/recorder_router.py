@@ -9,7 +9,11 @@ recorder_router = APIRouter(
 )
 
 
-@recorder_router.post("/translate-text/", status_code=200)
+@recorder_router.post(
+    "/translate-text/",
+    status_code=200,
+    response_model=TranslatedText,
+)
 async def translated_text_handler(user_text: UserText) -> TranslatedText:
     """
     Translates incoming text message from Russian to English
