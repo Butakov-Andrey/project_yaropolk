@@ -10,4 +10,4 @@ class TestHomePage:
         response = await async_client.get(self.HOME)
         assert response.status_code == 200
         assert "text/html" in response.headers["content-type"]
-        assert "Hello, world!" in response.text
+        assert "Project Yaropolk" in response.text
