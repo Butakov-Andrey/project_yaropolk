@@ -4,7 +4,7 @@ from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
-    DEEPL_API_KEY: str = "Api Key for Deepl"
+    DEEPL_API_KEY: str = "Deepl APIKey"
     LOGURU_FORMAT: str = (
         "<green>{time:HH:mm:ss}</green> | {level} | <level>{message}</level>"
     )
