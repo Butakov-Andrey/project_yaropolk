@@ -2,9 +2,9 @@
 Voice Assistant
 
 ## Features
-- voice text input
+- voice text input by webkitSpeechRecognition
 - keyboard text input
-- text translation
+- text translation by deepl
 
 ## Requirements
 To install the required dependencies, run the following commands:
@@ -22,10 +22,6 @@ $ pre-commit install
 [Specify the app directory](.pre-commit-config.yaml) in which the pre-commit hooks will run:  
 ```
 files: ^(app)
-```
-[Specify the app directory](.pre-commit-config.yaml) that pre-commit hooks should ignore:  
-```
-exclude: (?x).*/alembic($|/.*)
 ```
 ## Build containers
 To set env-file and build the Docker containers, run:
@@ -45,12 +41,7 @@ $ docker-compose exec app coverage run -m pytest
 $ docker-compose exec app coverage report -m
 ```
 
-STT
-https://github.com/openai/whisper
-https://github.com/alphacep/vosk-api/
-https://github.com/sovaai/sova-asr
-
 ## TODO
-- добавление файлов или ссылок для поиска по ним
-- второй бот чисто для общения с воспроизведением звука
-- добавление изображений
+- files and links for search support
+- second bot for talking
+- images support
