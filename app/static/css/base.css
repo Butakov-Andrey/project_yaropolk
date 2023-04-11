@@ -1,6 +1,22 @@
-div.container {
+div.responseContainer {
     text-align: center;
     padding-top: 40px;
-    padding-left: 20%;
-    padding-right: 20%
+    padding-left: 5%;
+    padding-right: 5%;
+
+}
+
+div.inputContainer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+}
+
+textarea {
+    min-height: 4em;
+    max-height: 12em;
+    resize: vertical;
 }

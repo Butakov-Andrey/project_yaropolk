@@ -8,6 +8,9 @@ const serverUrl = 'http://127.0.0.1:8080/api/v1/translate-text/';
 
 /* MAIN */
 export function sendText(fullTextFromUser) {
+    // сообщение пользователя
+    serverResponseDiv.innerHTML += 'YOU: ' + fullTextFromUser + '<br>';
+
     const requestBodyJson = JSON.stringify({ message: fullTextFromUser });
     fetch(serverUrl, {
         method: 'POST',
@@ -22,7 +25,8 @@ export function sendText(fullTextFromUser) {
             if (data.message) {
                 const message = data.message;
                 finishRecordBeep();
-                serverResponseDiv.innerHTML += message + '<br>';
+                // ответ сервера
+                serverResponseDiv.innerHTML += 'YAR: ' + message + '<br>';
             } else {
                 console.error(data.detail);
             }

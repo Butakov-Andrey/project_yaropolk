@@ -45,3 +45,5 @@ $ docker-compose exec app coverage report -m
 - files and links for search support
 - second bot for talking
 - images support
+- flexible text area
+- sound button

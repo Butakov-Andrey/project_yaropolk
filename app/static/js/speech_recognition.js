@@ -4,6 +4,7 @@ import { sendText } from './_send_to_server.js';
 
 /* SETTINGS */
 const userRequestDiv = document.getElementById('userRequest');
+const serverResponseDiv = document.getElementById('serverResponse');
 // голосовые команды
 const start_commands = ["ярополк", "ярик"]
 const send_commands = ["с богом", "аминь"]
