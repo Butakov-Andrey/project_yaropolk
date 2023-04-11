@@ -17,8 +17,6 @@ certifi==2022.12.7
     #   httpcore
     #   httpx
     #   requests
-cffi==1.15.1
-    # via vosk
 cfgv==3.3.1
     # via pre-commit
 charset-normalizer==3.1.0
@@ -33,14 +31,10 @@ distlib==0.3.6
     # via virtualenv
 fastapi==0.95.0
     # via -r ./app/requirements.in
-ffmpeg-python==0.2.0
-    # via -r ./app/requirements.in
 filelock==3.10.7
     # via virtualenv
 flake8==6.0.0
     # via -r ./app/requirements.in
-future==0.18.3
-    # via ffmpeg-python
 h11==0.14.0
     # via
     #   httpcore
@@ -82,12 +76,8 @@ pre-commit==3.2.2
     # via -r ./app/requirements.in
 pycodestyle==2.10.0
     # via flake8
-pycparser==2.21
-    # via cffi
 pydantic==1.10.7
     # via fastapi
-pydub==0.25.1
-    # via -r ./app/requirements.in
 pyflakes==3.0.1
     # via flake8
 pytest==7.2.2
@@ -101,9 +91,7 @@ python-multipart==0.0.6
 pyyaml==6.0
     # via pre-commit
 requests==2.28.2
-    # via
-    #   deep-translator
-    #   vosk
+    # via deep-translator
 rfc3986[idna2008]==1.5.0
     # via httpx
 sniffio==1.3.0
@@ -113,12 +101,8 @@ sniffio==1.3.0
     #   httpx
 soupsieve==2.4
     # via beautifulsoup4
-srt==3.5.3
-    # via vosk
 starlette==0.26.1
     # via fastapi
-tqdm==4.65.0
-    # via vosk
 typing-extensions==4.5.0
     # via
     #   mypy
@@ -129,10 +113,6 @@ uvicorn==0.21.1
     # via -r ./app/requirements.in
 virtualenv==20.21.0
     # via pre-commit
-vosk==0.3.45
-    # via -r ./app/requirements.in
-websockets==11.0.1
-    # via vosk
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
