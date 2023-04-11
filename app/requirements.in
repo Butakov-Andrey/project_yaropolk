@@ -13,6 +13,8 @@ Jinja2
 python-multipart
 # tests
 pytest
+httpx
+pytest-asyncio
 coverage
 
 # STT

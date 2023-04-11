@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     LOGURU_FORMAT: str = (
         "<green>{time:HH:mm:ss}</green> | {level} | <level>{message}</level>"
     )
+    PYTEST_BASE_URL: str = "http://test"
 
     class Config:
         env_file = os.getenv("ENV_FILE")
