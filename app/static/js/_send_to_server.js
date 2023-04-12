@@ -5,12 +5,14 @@ import { finishRecordBeep } from './_audio.js';
 const serverResponseDiv = document.getElementById('serverResponse');
 const serverUrl = 'http://127.0.0.1:8080/api/v1/translate-text/';
 
+const userRole = `YOU`;
+const botRole = `YAR`;
 
 /* MAIN */
 export function sendText(fullTextFromUser) {
     // сообщение пользователя
-    serverResponseDiv.innerHTML += 'YOU: ' + fullTextFromUser + '<br>';
-
+    serverResponseDiv.innerHTML += `<tr><td class="role">${userRole}: </td><td class="message">${fullTextFromUser}</td></tr>`;
+    document.documentElement.scrollTop = document.documentElement.scrollHeight;
     const requestBodyJson = JSON.stringify({ message: fullTextFromUser });
     fetch(serverUrl, {
         method: 'POST',
@@ -26,7 +28,8 @@ export function sendText(fullTextFromUser) {
                 const message = data.message;
                 finishRecordBeep();
                 // ответ сервера
-                serverResponseDiv.innerHTML += 'YAR: ' + message + '<br>';
+                serverResponseDiv.innerHTML += `<tr class="row-response"><td class="role">${botRole}: </td><td class="message">${message}</td></tr>`;
+                document.documentElement.scrollTop = document.documentElement.scrollHeight;
             } else {
                 console.error(data.detail);
             }
