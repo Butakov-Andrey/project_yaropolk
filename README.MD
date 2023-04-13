@@ -46,4 +46,3 @@ $ docker-compose exec app coverage report -m
 - second bot for talking
 - images support
 - sound button
-- role name without transporation

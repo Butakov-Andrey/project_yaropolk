@@ -1,7 +1,24 @@
+.navbar {
+    overflow: hidden;
+    background-color: #18232c;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: 3px solid #11191f;
+  }
+.navbar a.brand {
+    float: left;
+    padding: 14px 20px;
+}
+.navbar a.sound {
+    float: right;
+    padding: 14px 20px;
+}
+
 body {
     text-align: center;
     padding-top: 40px;
-    padding-bottom: 200px;
+    padding-bottom: 150px;
 }
 
 /* Ответ сервера */
@@ -22,6 +39,10 @@ div.responseContainer {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
+div.instruct {
+    opacity: 0.80;
+    margin-top: 150px;
+}
 
 /* Форма ввода */
 div.inputContainer {
@@ -30,6 +51,7 @@ div.inputContainer {
     bottom: 0;
     width: 100%;
     background-color: #18232c;
+    border-top: 3px solid #11191f;
 }
 div.inputForm {
     padding-left: 10%;
@@ -38,11 +60,10 @@ div.inputForm {
 }
 textarea {
     min-height: 4em;
-    max-height: 12em;
+    max-height: 4em;
     resize: vertical;
     margin-right: 8px;
 }
-
 button{
     width: 100px;
 }
@@ -52,11 +73,23 @@ table {
     table-layout:fixed;
 }
 td.role {
-    width: 10%;
-}
-td.message {
-    width: 90%;
+    width: 80px;
 }
 tr.row-response {
     background-color: #18232c;
+}
+
+p.listen {
+    opacity: 0.80;
+    position: absolute;
+    bottom: 0;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom: 175px;
+}
+
+small.footer {
+    opacity: 0.80;
 }
