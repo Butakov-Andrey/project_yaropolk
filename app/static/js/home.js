@@ -1,4 +1,4 @@
-import { sendText } from './_send_to_server.js';
+import { sendText } from './speech_recognition.js';
 
 
 /* SETTINGS */
@@ -6,19 +6,20 @@ const userRequestDiv = document.getElementById('userRequest');
 
 
 /* MAIN */
-// кнопка для скрытия элементов страницы
-// (политика chrome не позволяет воспроизводить аудио без пользовательских действий)
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("main").style.display = "none";
-});
-var hideBtn = document.getElementById("hide-btn");
-var divToHide = document.getElementById("main");
-hideBtn.addEventListener("click", function () {
-    divToHide.style.display = (divToHide.style.display == "none") ? "block" : "none";
+// sound toggler
+// (chrome policy prevents audio playback without user action)
+export let isSoundOn = 'off';
+let soundSwitch = document.getElementById("soundSwitch");
+soundSwitch.addEventListener("click", function () {
+    if (isSoundOn === "off") {
+        isSoundOn = "on";
+    } else {
+        isSoundOn = "off";
+    }
 });
 
-// отправка текста на сервер по нажатию кнопки
-var sendBtn = document.getElementById("send-btn");
+// send transcribed voice to server
+let sendBtn = document.getElementById("sendBtn");
 sendBtn.addEventListener("click", function () {
     sendText(userRequestDiv.value);
 });

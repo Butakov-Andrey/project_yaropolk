@@ -5,6 +5,23 @@ from fastapi import HTTPException
 
 
 async def translate_text(text: str, from_lang: str, to_lang: str) -> str:
+    """
+    Translates the input text using either the Google or Deepl API.
+
+    Parameters:
+    -----------
+    text : str.
+        The text to be translated.
+    from_lang : str.
+        The source language code.
+    to_lang : str.
+        The target language code.
+
+    Returns:
+    --------
+    str.
+        The translated text.
+    """
     try:
         if settings.DEEPL_API_KEY == "Deepl APIKey":
             translated_text = GoogleTranslator(

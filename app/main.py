@@ -7,7 +7,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from loguru import logger
 from middleware import logging_middleware
-from routers import home_router, recorder_router
+from routers import gpt_router, home_router
 
 app = FastAPI(
     title="Project Yaropolk",
@@ -45,4 +45,4 @@ app.middleware("http")(logging_middleware)
 
 # routers
 app.include_router(home_router)
-app.include_router(recorder_router)
+app.include_router(gpt_router)

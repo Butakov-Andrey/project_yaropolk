@@ -6,6 +6,21 @@ from loguru import logger
 
 
 async def logging_middleware(request: Request, call_next: Callable) -> JSONResponse:
+    """
+    Middleware that logs incoming requests and outgoing responses.
+
+    Parameters:
+    -----------
+    request : Request.
+        The incoming HTTP request object.
+    call_next : Callable.
+        The next callable in the chain.
+
+    Returns:
+    --------
+    JSONResponse.
+        The HTTP response object.
+    """
     logger.debug("REQUEST:")
     logger.debug(f"{request.method} {request.url}")
     logger.debug("Params:")
@@ -17,11 +32,11 @@ async def logging_middleware(request: Request, call_next: Callable) -> JSONRespo
 
     response = await call_next(request)
 
-    logger.info("RESPONSE:")
-    logger.info(f"{request.method} {request.url}")
-    logger.info(f"Status code: {response.status_code}")
-    logger.info("Headers:")
+    logger.debug("RESPONSE:")
+    logger.debug(f"{request.method} {request.url}")
+    logger.debug(f"Status code: {response.status_code}")
+    logger.debug("Headers:")
     for name, value in response.headers.items():
-        logger.info(f"\t{name}: {value}")
+        logger.debug(f"\t{name}: {value}")
 
     return response

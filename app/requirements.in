@@ -17,10 +17,7 @@ httpx
 pytest-asyncio
 coverage
 
-# STT
-ffmpeg-python
-vosk
-pydub
-
 # translators
 deep-translator
+# openai
+openai

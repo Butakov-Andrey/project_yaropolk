@@ -8,9 +8,19 @@ home_router = APIRouter(
 )
 
 
-@home_router.get("/", status_code=200)
+@home_router.get("/", status_code=200, response_class=HTMLResponse)
 async def home(request: Request) -> HTMLResponse:
     """
-    Returns the main page of app
+    Renders the main page of the app.
+
+    Parameters:
+    -----------
+    request : Request.
+        The HTTP request object.
+
+    Returns:
+    --------
+    HTMLResponse.
+        The HTML response object containing the rendered template.
     """
     return main.templates.TemplateResponse("home.html", {"request": request})

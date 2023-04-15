@@ -1,6 +1,93 @@
-div.container {
+/* Header */
+.navbar {
+    overflow: hidden;
+    background-color: #18232c;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: 3px solid #11191f;
+  }
+.navbar a.brand {
+    float: left;
+    padding: 14px 20px;
+}
+.navbar a.sound {
+    float: right;
+    padding: 14px 20px;
+}
+
+/* Body */
+body {
     text-align: center;
     padding-top: 40px;
-    padding-left: 20%;
-    padding-right: 20%
+    padding-bottom: 125px;
+}
+
+/* Server response */
+div.responseContainer {
+    text-align: center;
+    padding-top: 40px;
+    padding-left: 15%;
+    padding-right: 15%;
+    overflow-y: auto;
+    height: 100%;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+div.responseContainer::-webkit-scrollbar {
+    display: none;
+  }
+/* Hide scrollbar for IE, Edge and Firefox */
+div.responseContainer {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+div.instruct {
+    opacity: 0.80;
+    margin-top: 150px;
+}
+
+/* Input field */
+div.inputContainer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #18232c;
+    border-top: 3px solid #11191f;
+
+}
+div.inputForm {
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 15px;
+}
+textarea {
+    min-height: 4em;
+    max-height: 4em;
+    resize: vertical;
+    margin-right: 8px;
+    margin-bottom: 15px;
+}
+button{
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+/* Table */
+table {
+    table-layout:fixed;
+}
+td.role {
+    width: 80px;
+}
+tr.row-response {
+    background-color: #18232c;
+}
+
+/* Footer */
+small.footer {
+    opacity: 0.80;
+}
+p.footer {
+    margin-bottom: 15px;
 }

@@ -1,13 +1,14 @@
-// звук начала и конца записи расшифрованного текста
+/* MAIN */
+// start and finish sounds of speech recognition
 const urlStartMp3 = 'static/js/audio/start_record.mp3';
 export function startRecordBeep() {
-    // звук начала записи
+    // start sound
     const beep = new Audio(urlStartMp3);
     beep.play();
 }
 const urlFinishMp3 = 'static/js/audio/finish_record.mp3';
 export function finishRecordBeep() {
-    // звук конца записи
+    // finish sound
     const beep = new Audio(urlFinishMp3);
     beep.play();
 }

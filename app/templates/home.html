@@ -10,29 +10,40 @@
         <link rel="icon" href="{{ url_for('static', path='/favicon.ico') }}">
     </head>
     <body>
-
-        <div class="container">
-            <button id="hide-btn">Hide Div</button>
-            <div id="main">
-                <h1>Hello, world!</h1>
-
-                <p><h4>userRequestDiv:</h4>
-                    <div>
-                        <p><textarea id="userRequest"></textarea></p>
-                    </div>
-                </p>
-                <button id="send-btn">Send text</button>
-
-                <p><h4>serverResponseDiv:</h4>
-                    <div id="serverResponse"></div>
-                </p>
-            </div>
+        <div class="navbar">
+            <a class="brand">Project Yaropolk</a>
+            <a class="sound">Sound <input type="checkbox" id="soundSwitch" role="switch"></a>
         </div>
 
+        <div class="mainContainer">
+            <div class="responseContainer" id="responseContainer">
+                <table id="serverResponse">
+                    <div class="instruct" id="instructDiv">
+                        <h4>Инструкции:</h4>
+                        <p>Для голосового ввода, скажите: "Ярополк"</p>
+                        <p>Для отправки сообщения, скажите: "С Богом"</p>
+                    </div>
+                </table>
+            </div>
+            <div class="inputContainer">
+                <div class="inputForm">
+                    <nav>
+                        <textarea id="userRequest"></textarea>
+                        <button class="outline" role="button" id="sendBtn">Send</button>
+                    </nav>
+                </div>
+                <footer>
+                    <p class="footer">
+                        <small class="footer">
+                            GitHub: <a href="https://github.com/Butakov-Andrey/project_yaropolk">Andrey Butakov</a>
+                        </small>
+                    </p>
+                </footer>
+            </div>
+        </div>
         <!-- js -->
         <script type="module" src="{{ url_for('static', path='/js/home.js') }}"></script>
         <script type="module" src="{{ url_for('static', path='/js/speech_recognition.js') }}"></script>
-        <script type="module" src="{{ url_for('static', path='/js/_audio.js') }}"></script>
-        <script type="module" src="{{ url_for('static', path='/js/_send_to_server.js') }}"></script>
+        <script type="module" src="{{ url_for('static', path='/js/audio.js') }}"></script>
     </body>
 </html>
