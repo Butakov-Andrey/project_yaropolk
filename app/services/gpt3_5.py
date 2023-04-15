@@ -47,6 +47,9 @@ class ChatAssistant:
             {"role": Gpt3_5Constants.SYSTEM_ROLE, "content": self.system_prompt},
             {"role": Gpt3_5Constants.USER_ROLE, "content": user_prompt},
         ]
+
+        print(messages)
+
         try:
             response = openai.ChatCompletion.create(
                 model=Gpt3_5Constants.MODEL,

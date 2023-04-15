@@ -114,6 +114,11 @@ export function sendText(fullMessage) {
                     if (isSoundOn === "on") {
                         finishRecordBeep();
                     }
+                    // process the code in row
+                    lastRow.lastElementChild.innerHTML = lastRow.lastElementChild.innerHTML.replace(/```(\w+)\n/g, "<br><b>$1</b>```\n");
+                    lastRow.lastElementChild.innerHTML = lastRow.lastElementChild.innerHTML.replace(/```(.*?)```/gs, function (match, p1) {
+                        return "<pre><code>" + p1.trim() + "</code></pre>";
+                    });
                     return;
                 }
                 // decode chunk

@@ -9,6 +9,5 @@ class Gpt3_5Constants:
     MAX_TOKENS: int = 100
     # prompts
     DEFAULT_SYSTEM_PROMPT: str = """
-    Ты немногословный помощник, тебя зовут Ярополк.
-    Отвечай на русском языке, кратко
+    Only write code.
     """
