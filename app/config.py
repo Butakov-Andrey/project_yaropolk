@@ -4,10 +4,16 @@ from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
+    # deepl
     DEEPL_API_KEY: str = "Deepl APIKey"
+    # openai
+    ORGANIZATION: str = "OpenAI Organization ID"
+    OPENAI_API_KEY: str = "OpenAI APIKey"
+    # logging
     LOGURU_FORMAT: str = (
         "<green>{time:HH:mm:ss}</green> | {level} | <level>{message}</level>"
     )
+    # tests
     PYTEST_BASE_URL: str = "http://test"
 
     class Config:

@@ -19,18 +19,13 @@
             <div class="responseContainer" id="responseContainer">
                 <table id="serverResponse">
                     <div class="instruct" id="instructDiv">
-                        <h4>Instructions:</h4>
+                        <h4>Инструкции:</h4>
                         <p>Для голосового ввода, скажите: "Ярополк"</p>
                         <p>Для отправки сообщения, скажите: "С Богом"</p>
                     </div>
                 </table>
             </div>
-
             <div class="inputContainer">
-                <div>
-                    <p class="listen" id="listenDiv">
-                    </p>
-                </div>
                 <div class="inputForm">
                     <nav>
                         <textarea id="userRequest"></textarea>
@@ -38,7 +33,7 @@
                     </nav>
                 </div>
                 <footer>
-                    <p>
+                    <p class="footer">
                         <small class="footer">
                             GitHub: <a href="https://github.com/Butakov-Andrey/project_yaropolk">Andrey Butakov</a>
                         </small>
@@ -49,6 +44,6 @@
         <!-- js -->
         <script type="module" src="{{ url_for('static', path='/js/home.js') }}"></script>
         <script type="module" src="{{ url_for('static', path='/js/speech_recognition.js') }}"></script>
-        <script type="module" src="{{ url_for('static', path='/js/_audio.js') }}"></script>
+        <script type="module" src="{{ url_for('static', path='/js/audio.js') }}"></script>
     </body>
 </html>

@@ -1,3 +1,4 @@
+/* Header */
 .navbar {
     overflow: hidden;
     background-color: #18232c;
@@ -15,13 +16,14 @@
     padding: 14px 20px;
 }
 
+/* Body */
 body {
     text-align: center;
     padding-top: 40px;
-    padding-bottom: 150px;
+    padding-bottom: 125px;
 }
 
-/* Ответ сервера */
+/* Server response */
 div.responseContainer {
     text-align: center;
     padding-top: 40px;
@@ -44,7 +46,7 @@ div.instruct {
     margin-top: 150px;
 }
 
-/* Форма ввода */
+/* Input field */
 div.inputContainer {
     text-align: center;
     position: fixed;
@@ -52,23 +54,26 @@ div.inputContainer {
     width: 100%;
     background-color: #18232c;
     border-top: 3px solid #11191f;
+
 }
 div.inputForm {
     padding-left: 10%;
     padding-right: 10%;
-    padding-top: 20px;
+    margin-top: 15px;
 }
 textarea {
     min-height: 4em;
     max-height: 4em;
     resize: vertical;
     margin-right: 8px;
+    margin-bottom: 15px;
 }
 button{
     width: 100px;
+    margin-bottom: 15px;
 }
 
-/* Таблица */
+/* Table */
 table {
     table-layout:fixed;
 }
@@ -79,17 +84,10 @@ tr.row-response {
     background-color: #18232c;
 }
 
-p.listen {
-    opacity: 0.80;
-    position: absolute;
-    bottom: 0;
-    left:0;
-    right:0;
-    margin-left:auto;
-    margin-right:auto;
-    margin-bottom: 175px;
-}
-
+/* Footer */
 small.footer {
     opacity: 0.80;
+}
+p.footer {
+    margin-bottom: 15px;
 }

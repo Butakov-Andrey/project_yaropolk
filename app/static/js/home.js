@@ -6,8 +6,8 @@ const userRequestDiv = document.getElementById('userRequest');
 
 
 /* MAIN */
-// кнопка для включения звука
-// (политика chrome не позволяет воспроизводить аудио без пользовательских действий)
+// sound toggler
+// (chrome policy prevents audio playback without user action)
 export let isSoundOn = 'off';
 let soundSwitch = document.getElementById("soundSwitch");
 soundSwitch.addEventListener("click", function () {
@@ -18,9 +18,8 @@ soundSwitch.addEventListener("click", function () {
     }
 });
 
-// отправка текста на сервер по нажатию кнопки
+// send transcribed voice to server
 let sendBtn = document.getElementById("sendBtn");
 sendBtn.addEventListener("click", function () {
     sendText(userRequestDiv.value);
-    document.getElementById("listenDiv").innerHTML = '';
 });
