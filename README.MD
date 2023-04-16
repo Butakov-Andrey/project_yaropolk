@@ -4,7 +4,7 @@ Voice Assistant
 ## Features
 - voice text input by webkitSpeechRecognition
 - keyboard text input
-- text translation by deepl
+- gpt3.5-turbo
 
 ## Requirements
 To install the required dependencies, run the following commands:
@@ -40,9 +40,3 @@ To check test coverage, run:
 $ docker-compose exec app coverage run -m pytest
 $ docker-compose exec app coverage report -m
 ```
-
-## TODO
-- files and links for search support
-- second bot for talking
-- images support
-- code on html page
