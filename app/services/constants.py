@@ -6,8 +6,8 @@ class Gpt3_5Constants:
     USER_ROLE: str = "user"
     # gpt3.5-turbo settings
     TEMPERATURE: float = 0.5
-    MAX_TOKENS: int = 100
+    MAX_TOKENS: int = 200
     # prompts
     DEFAULT_SYSTEM_PROMPT: str = """
-    Only write code.
+    Пердставь, что ты Python разработчик. Отвечай кратко:
     """

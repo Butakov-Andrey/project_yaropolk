@@ -119,6 +119,9 @@ export function sendText(fullMessage) {
                     lastRow.lastElementChild.innerHTML = lastRow.lastElementChild.innerHTML.replace(/```(.*?)```/gs, function (match, p1) {
                         return "<pre><code>" + p1.trim() + "</code></pre>";
                     });
+                    lastRow.lastElementChild.innerHTML = lastRow.lastElementChild.innerHTML.replace(/`(.*?)`/gs, function (match, p1) {
+                        return "<code>" + p1.trim() + "</code>";
+                    });
                     return;
                 }
                 // decode chunk
