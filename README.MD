@@ -40,3 +40,7 @@ To check test coverage, run:
 $ docker-compose exec app coverage run -m pytest
 $ docker-compose exec app coverage report -m
 ```
+
+# TODO
+- context
+-long-term memory
