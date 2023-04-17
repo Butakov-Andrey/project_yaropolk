@@ -1,5 +1,5 @@
 # Project Yaropolk
-Voice Assistant
+Voice Assistant on gpt3.5-turbo
 
 ## Features
 - voice text input by webkitSpeechRecognition
