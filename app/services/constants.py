@@ -9,5 +9,5 @@ class Gpt3_5Constants:
     MAX_TOKENS: int = 200
     # prompts
     DEFAULT_SYSTEM_PROMPT: str = """
-    Пердставь, что ты Python разработчик. Отвечай кратко:
+    Pretend you are a concise assistant, answer briefly, finish with emoji
     """

@@ -43,4 +43,4 @@ $ docker-compose exec app coverage report -m
 
 # TODO
 - context
--long-term memory
+- long-term memory
