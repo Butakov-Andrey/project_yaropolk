@@ -7,7 +7,8 @@ class Gpt3_5Constants:
     # gpt3.5-turbo settings
     TEMPERATURE: float = 0.5
     MAX_TOKENS: int = 200
+    CONTEXT_LIMIT_MESSAGES: int = 10
     # prompts
-    DEFAULT_SYSTEM_PROMPT: str = """
-    Pretend you are a concise assistant, answer briefly, finish with emoji
-    """
+    DEFAULT_SYSTEM_PROMPT: str = (
+        """Pretend you are a concise assistant, answer briefly, finish with emoji \n"""
+    )

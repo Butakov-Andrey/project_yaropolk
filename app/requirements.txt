@@ -39,6 +39,8 @@ deep-translator==1.10.1
     # via -r ./app/requirements.in
 distlib==0.3.6
     # via virtualenv
+dnspython==2.3.0
+    # via pymongo
 fastapi==0.95.0
     # via -r ./app/requirements.in
 filelock==3.10.7
@@ -75,6 +77,8 @@ markupsafe==2.1.2
     # via jinja2
 mccabe==0.7.0
     # via flake8
+motor==3.1.2
+    # via -r ./app/requirements.in
 multidict==6.0.4
     # via
     #   aiohttp
@@ -83,6 +87,8 @@ mypy==1.1.1
     # via -r ./app/requirements.in
 mypy-extensions==1.0.0
     # via mypy
+neo4j==5.7.0
+    # via -r ./app/requirements.in
 nodeenv==1.7.0
     # via pre-commit
 openai==0.27.4
@@ -101,6 +107,10 @@ pydantic==1.10.7
     # via fastapi
 pyflakes==3.0.1
     # via flake8
+pymongo==4.3.3
+    # via
+    #   -r ./app/requirements.in
+    #   motor
 pytest==7.2.2
     # via
     #   -r ./app/requirements.in
@@ -109,6 +119,8 @@ pytest-asyncio==0.21.0
     # via -r ./app/requirements.in
 python-multipart==0.0.6
     # via -r ./app/requirements.in
+pytz==2023.3
+    # via neo4j
 pyyaml==6.0
     # via pre-commit
 requests==2.28.2

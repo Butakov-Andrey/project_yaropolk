@@ -13,8 +13,11 @@ class Settings(BaseSettings):
     LOGURU_FORMAT: str = (
         "<green>{time:HH:mm:ss}</green> | {level} | <level>{message}</level>"
     )
-    # tests
+    # pytest
     PYTEST_BASE_URL: str = "http://test"
+    # mongodb
+    MONGO_HOST: str = "mongodb"
+    MONGO_PORT: int = 27017
 
     class Config:
         env_file = os.getenv("ENV_FILE")
