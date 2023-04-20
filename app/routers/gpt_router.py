@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from fastapi.responses import StreamingResponse
 from schemas import ContextDeleted, UserText
-from services import chat_assistant
+from services import ContextManager, chat_assistant
 
 gpt_router = APIRouter(
     prefix="/api/v1",
@@ -41,5 +41,5 @@ async def gpt_delete_context() -> ContextDeleted:
     ContextDeleted.
         A response model containing the number of deleted messages in context.
     """
-    deleted_count = chat_assistant.delete_all_context()
+    deleted_count = ContextManager().delete_all_context()
     return ContextDeleted(deleted_count=deleted_count)

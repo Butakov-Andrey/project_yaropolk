@@ -24,6 +24,3 @@ openai
 
 # mongodb
 pymongo
-motor
-# graphbd
-neo4j
