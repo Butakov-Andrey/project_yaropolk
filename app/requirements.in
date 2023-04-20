@@ -21,3 +21,6 @@ coverage
 deep-translator
 # openai
 openai
+
+# mongodb
+pymongo

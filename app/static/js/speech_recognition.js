@@ -5,7 +5,9 @@ import { isSoundOn } from './home.js';
 /* SETTINGS */
 const userRequestDiv = document.getElementById('userRequest');
 const serverResponseTable = document.getElementById('serverResponse');
-const serverUrl = 'http://127.0.0.1:8080/api/v1/gpt/';
+const serverUrl = 'http://127.0.0.1:8080/api/v1/';
+const gptEndpoint = 'gpt/';
+const deleteContextEndpoint = 'delete_context/';
 const userRole = `YOU`;
 const botRole = `YAR`;
 const listenMessage = "Слушаю...";
@@ -90,7 +92,7 @@ export function sendText(fullMessage) {
     fullTextFromUser = '';
     fullTextFromUserKeyBoard = '';
     userRequestDiv.value = `${fullTextFromUser}`;
-    fetch(serverUrl, {
+    fetch(serverUrl + gptEndpoint, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -138,4 +140,23 @@ export function sendText(fullMessage) {
     function onChunkedResponseError(err) {
         console.error(err)
     }
+}
+
+// delete context
+export function deleteContext() {
+    fetch(serverUrl + deleteContextEndpoint, {
+        method: 'DELETE'
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Context deleted:', data);
+        })
+        .catch(error => {
+            console.error('Error deleting context:', error);
+        });
 }

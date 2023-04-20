@@ -1,4 +1,4 @@
-import { sendText } from './speech_recognition.js';
+import { deleteContext, sendText } from './speech_recognition.js';
 
 
 /* SETTINGS */
@@ -23,3 +23,7 @@ let sendBtn = document.getElementById("sendBtn");
 sendBtn.addEventListener("click", function () {
     sendText(userRequestDiv.value);
 });
+
+// delete context
+let deleteContextBtn = document.getElementById("deleteContextBtn");
+deleteContextBtn.addEventListener("click", deleteContext);

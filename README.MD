@@ -5,6 +5,7 @@ Voice Assistant on gpt3.5-turbo
 - voice text input by webkitSpeechRecognition
 - keyboard text input
 - gpt3.5-turbo
+- context for 10 last messages
 
 ## Requirements
 To install the required dependencies, run the following commands:

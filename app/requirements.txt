@@ -39,6 +39,8 @@ deep-translator==1.10.1
     # via -r ./app/requirements.in
 distlib==0.3.6
     # via virtualenv
+dnspython==2.3.0
+    # via pymongo
 fastapi==0.95.0
     # via -r ./app/requirements.in
 filelock==3.10.7
@@ -101,6 +103,8 @@ pydantic==1.10.7
     # via fastapi
 pyflakes==3.0.1
     # via flake8
+pymongo==4.3.3
+    # via -r ./app/requirements.in
 pytest==7.2.2
     # via
     #   -r ./app/requirements.in
